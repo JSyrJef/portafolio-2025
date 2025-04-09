@@ -99,3 +99,14 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.5);
 }
+
+* {
+  /*outline: 1px solid red; /* ver desbordamiento de la pagina */
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden; /* Previene scroll horizontal */
+  max-width: 100vw;
+}

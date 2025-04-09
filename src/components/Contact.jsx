@@ -91,7 +91,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-card rounded-xl p-8 shadow-lg"
+            className="bg-card rounded-xl p-8 shadow-lg overflow-x-hidden"
           >
             <h3 className="text-xl font-bold mb-6 text-purple-500">Envíame un mensaje</h3>
 
@@ -177,7 +177,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-8 overflow-x-hidden"
           >
             <div className="bg-card rounded-xl p-8 shadow-lg">
               <h3 className="text-xl font-bold mb-6 text-purple-500">Información de contacto</h3>
@@ -190,7 +190,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-foreground/60">{item.label}</p>
-                      <p className="font-medium">{item.value}</p>
+                      <p className="font-medium break-all text-wrap">{item.value}</p>
                     </div>
                   </div>
                 ))}

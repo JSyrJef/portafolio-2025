@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { DiAndroid } from "react-icons/di";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -45,6 +46,25 @@ const Projects = () => {
       technologies: ["Laravel", "React", "Tailwind CSS", "MySQL", "Axios"],
       liveUrl: "#",
       githubUrl: "https://github.com/JSyrJef/user-management-app",
+    },
+    {
+      id: 4,
+      title: "Sistema de Administración de Recompensas por Rachas de TikTok",
+      description:
+        "Desarrollo de una aplicación para negocios que permite crear, gestionar y aplicar promociones basadas en las rachas de TikTok de los clientes. La app registra usuarios, valida su actividad en TikTok y asigna recompensas, con roles para administradores y dependientes.",
+      image: "/source/Picture5.webp?height=600&width=800",
+      technologies: [
+        "Django",
+        "Axios",
+        "JWT",
+        "PostgreSQL",
+        "React Native",
+        "CSS (StyleSheet)",
+      ],
+      githubUrl: "https://github.com/JSyrJef/app-de-rachas",
+      isMobile: true, // Indica que es un proyecto móvil
+      mobileDemoUrl:
+        "https://drive.google.com/uc?export=download&id=1EHrETQYTcgv3wjCOAJ_XT65Rfx7cPiw2",
     },
   ];
 
@@ -132,7 +152,22 @@ const Projects = () => {
                   >
                     <FiGithub /> Código
                   </a>
-                  {project.liveUrl && project.liveUrl !== "#" ? (
+                  {project.isMobile ? (
+                    project.mobileDemoUrl ? (
+                      <a
+                        href={project.mobileDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-foreground/70 hover:text-purple-500 transition-colors duration-300"
+                      >
+                        <DiAndroid /> Demo Android App
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-1 text-foreground/40 italic">
+                        <DiAndroid /> Sin Demo Android App
+                      </span>
+                    )
+                  ) : project.liveUrl && project.liveUrl !== "#" ? (
                     <a
                       href={project.liveUrl}
                       target="_blank"
